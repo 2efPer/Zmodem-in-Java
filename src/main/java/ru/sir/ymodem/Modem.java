@@ -114,7 +114,7 @@ class Modem {
     protected void sendDataBlocks(DataInputStream dataStream, int blockNumber, CRC crc, byte[] block) throws IOException {
         int dataLength;
         while ((dataLength = dataStream.read(block)) != -1) {
-            sendBlock(blockNumber++, block, dataLength, crc);
+            sendBlock((byte)(blockNumber++), block, dataLength, crc);
         }
     }
 
@@ -138,7 +138,7 @@ class Modem {
         }
     }
 
-    protected void sendBlock(int blockNumber, byte[] block, int dataLength, CRC crc) throws IOException {
+    protected void sendBlock(byte blockNumber, byte[] block, int dataLength, CRC crc) throws IOException {
         int errorCount;
         int character;
         Timer timer = new Timer(SEND_BLOCK_TIMEOUT);
@@ -183,7 +183,7 @@ class Modem {
 
         throw new IOException("Too many errors caught, abandoning transfer");
     }
-
+    //TODO SomeThing Wrong With this implemention of Algorithm
     private void writeCRC(byte[] block, CRC crc) throws IOException {
         byte[] crcBytes = new byte[crc.getCRCLength()];
         long crcValue = crc.calcCRC(block);

@@ -57,7 +57,7 @@ public class YModem {
             BasicFileAttributes readAttributes = Files.readAttributes(file, BasicFileAttributes.class);
             String fileNameString = file.getFileName().toString() + (char)0 + ((Long) Files.size(file)).toString()+" "+ Long.toOctalString(readAttributes.lastModifiedTime().toMillis() / 1000);
             byte[] fileNameBytes = Arrays.copyOf(fileNameString.getBytes(), 128);
-            modem.sendBlock(0, Arrays.copyOf(fileNameBytes, 128), 128, crc);
+            modem.sendBlock((byte)0, Arrays.copyOf(fileNameBytes, 128), 128, crc);
 
             modem.waitReceiverRequest(timer);
             //send data
@@ -96,7 +96,7 @@ public class YModem {
 
         //send block 0
         byte[] bytes = new byte[128];
-        modem.sendBlock(0, bytes, bytes.length, crc);
+        modem.sendBlock((byte)0, bytes, bytes.length, crc);
     }
 
     /**
