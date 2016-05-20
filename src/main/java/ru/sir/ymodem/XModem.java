@@ -34,8 +34,8 @@ public class XModem {
      * @param file
      * @throws java.io.IOException
      */
-    public void send(Path file) throws IOException, InterruptedException {
-        modem.send(file, false);
+    public void send(Path file,boolean useBlock1K) throws IOException, InterruptedException {
+        modem.send(file, useBlock1K);
     }
 
     /**
