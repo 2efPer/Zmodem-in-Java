@@ -1,4 +1,4 @@
-package ru.sir.ymodem;
+package zmodem.xfer.util;
 
 /**
 * Created by asirotinkin on 12.11.2014.

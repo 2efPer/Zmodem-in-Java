@@ -1,10 +1,10 @@
-package ru.sir.ymodem;
+package zmodem.xfer.util;
 
 /**
  * Uses table for irreducible polynomial:  1 + x^2 + x^15 + x^16
  */
 
-public class CRC16 implements CRC {
+public class CRC16 implements XCRC {
 
     private static int[] table = {
         0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50A5, 0x60C6, 0x70E7,

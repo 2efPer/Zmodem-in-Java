@@ -1,9 +1,9 @@
-package ru.sir.ymodem;
+package zmodem.xfer.util;
 
 /**
  * Created by asirotinkin on 11.11.2014.
  */
-public class CRC8 implements CRC {
+public class CRC8 implements XCRC {
     @Override
     public int getCRCLength() {
         return 1;
