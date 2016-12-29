@@ -40,7 +40,7 @@ public class CustomFile implements FileAdapter{
 		if(name.equals(file.getName())){
 			return this;
 		}else if(file.isDirectory()){
-			File son = new File(file.getAbsolutePath()+"\\"+name);
+			File son = new File(file.getAbsolutePath() + File.separator  + name);
 			try {
 				son.createNewFile();
 			} catch (IOException e) {
