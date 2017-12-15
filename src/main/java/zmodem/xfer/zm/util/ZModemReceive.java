@@ -130,6 +130,8 @@ public class ZModemReceive {
 						os.write(new Header(Format.HEX, ZModemCharacter.ZRINIT, recvOpt));
 						expect = Expect.NOTHING;
 						filename = null;
+						fileOs.flush();
+						fileOs.close();
 						fileOs = null;
 						break;
 					case ZDATA:
